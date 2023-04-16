@@ -25,7 +25,6 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding=FragmentMainfragmentBinding.inflate(inflater)
-        viewModle.getCoins()
         setupRecyclerView()
         viewModle.navigateToSelectedCoin.observe(viewLifecycleOwner) { coin ->
             coin?.let {
@@ -42,8 +41,6 @@ class MainFragment : Fragment() {
                 if (it.error.isNotBlank()){
                     binding.error.text=it.error
                     binding.statusLoadingWheel.visibility=View.GONE
-                    delay(3000)
-                    viewModle.getCoins()
 
 
                 }else if (it.isLoading){

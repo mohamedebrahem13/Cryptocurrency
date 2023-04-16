@@ -23,7 +23,9 @@ class CoinListViewModel  @Inject constructor(
     val state: StateFlow<CoinListState> = _state
 
 
-
+init {
+    getCoins()
+}
 
     private val _navigateToSelectedCoin = MutableLiveData<Coin?>()
     val navigateToSelectedCoin: MutableLiveData<Coin?>
@@ -39,7 +41,7 @@ class CoinListViewModel  @Inject constructor(
         _navigateToSelectedCoin.value = null
     }
 
-     fun getCoins() {
+    private  fun getCoins() {
         getCoinsUseCase().onEach { result ->
             when (result) {
                 is Resource.Success -> {
