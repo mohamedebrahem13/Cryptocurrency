@@ -10,13 +10,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.cryptocurrency.databinding.FragmentMainfragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainFragment : Fragment() {
     private var coinListAdapter: CoinListAdapter? = null
     private val viewModle:CoinListViewModel by viewModels()
+
     private lateinit var binding : FragmentMainfragmentBinding
 
     override fun onCreateView(
@@ -35,7 +35,9 @@ class MainFragment : Fragment() {
             }
         }
 
+
         lifecycleScope.launch{
+
 
             viewModle.state.collect{
                 if (it.error.isNotBlank()){

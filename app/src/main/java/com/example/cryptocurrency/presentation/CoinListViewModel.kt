@@ -27,6 +27,8 @@ init {
     getCoins()
 }
 
+
+
     private val _navigateToSelectedCoin = MutableLiveData<Coin?>()
     val navigateToSelectedCoin: MutableLiveData<Coin?>
         get() = _navigateToSelectedCoin
