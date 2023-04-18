@@ -45,7 +45,7 @@ class CoinDetailFragment : Fragment() {
                     }
                     else -> {
                         binding.error.visibility=View.GONE
-                        binding.name.text= it.coin!!.name
+                        binding.coinDetail= it.coin!!
                         binding.statusLoadingWheel.visibility=View.GONE
 
 
