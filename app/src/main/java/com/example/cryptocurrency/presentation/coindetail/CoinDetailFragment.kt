@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.cryptocurrency.databinding.FragmentCoinDetailBinding
 import com.example.cryptocurrency.presentation.CoinListViewModel
+import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -46,6 +47,7 @@ class CoinDetailFragment : Fragment() {
                     else -> {
                         binding.error.visibility=View.GONE
                         binding.coinDetail= it.coin!!
+                        addChips(it.coin.tags)
                         binding.statusLoadingWheel.visibility=View.GONE
 
 
@@ -55,6 +57,16 @@ class CoinDetailFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+
+    fun addChips(list: List<String>){
+        for(i in list){
+            val chip=Chip(this.context)
+            chip.text= i
+            binding.chibgroub.addView(chip)
+        }
+
     }
 }
 

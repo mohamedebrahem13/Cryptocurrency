@@ -100,10 +100,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
-                    android:layout_marginBottom="92dp"
+                    android:layout_marginBottom="25dp"
                     app:fontFamily="sans-serif-medium"
                     app:isActive="@{coinDetail.active}"
                     app:isActiveColor="@{coinDetail.active}" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chibgroub"
+                  android:layout_width="match_parent"
+                    android:layout_marginStart="25dp"
+                    android:layout_height="match_parent">
+                </com.google.android.material.chip.ChipGroup>
             </LinearLayout>
         </ScrollView>
 
